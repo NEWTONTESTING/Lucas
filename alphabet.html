@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alphabet - BeyondWords</title>
+  <link rel="stylesheet" href="styleindex.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --extra-scroll: 120vh;
+      --header-height: 72px;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #141414 url("alphabetbg.png") repeat;
+      background-size: cover;
+    }
+
+    main {
+      min-height: calc(100vh + var(--extra-scroll));
+      padding-top: var(--header-height);
+    }
+
+    .alphabet-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      padding: 100px 40px 40px;
+      justify-items: center;
+      position: relative;
+    }
+
+    .alphabet-box {
+      position: relative;
+      background: #fff;
+      border-radius: 12px;
+      width: 220px;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.25),
+        0 0 20px rgba(255,255,255,0.6);
+    }
+
+    .alphabet-box:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow:
+        0 12px 25px rgba(0,0,0,0.35),
+        0 0 30px rgba(0,47,108,0.9);
+    }
+
+    .alphabet-letter {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000;
+      background: rgba(255,255,255,0.8);
+      padding: 2px 8px;
+      border-radius: 6px;
+      z-index: 5;
+      pointer-events: none;
+      transition: transform 0.3s ease, top 0.3s ease;
+    }
+
+    .alphabet-box:hover .alphabet-letter {
+      top: -35px;
+      transform: translateX(-50%) scale(1.2);
+    }
+
+    .box-image {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      overflow: hidden;
+    }
+
+    .box-image picture,
+    .box-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      display: block;
+    }
+
+    .magnify-btn {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+      z-index: 4;
+    }
+
+    .alphabet-box.magnified::after {
+      content: '';
+      position: absolute;
+      top: var(--y, 0);
+      left: var(--x, 0);
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 2px solid #333;
+      background-repeat: no-repeat;
+      background-size: 300% 300%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body class="alphabet-page">
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="demo.html" class="navbar-brand">
+          <img src="logo.png" alt="Logo" class="navbar-logo">
+          <span class="beyondwords">BeyondWords</span>
+        </a>
+      </div>
+    </nav>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="alphabet.html" class="active">Alphabet</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="practice.html">Practice</a>
+    </nav>
+  </header>
+
+  <!-- Alphabet Boxes -->
+<main>
+  <section class="alphabet-section">
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">A</div>
+      <div class="box-image"><img src="https://i.ibb.co/1Y0kprPv/Hand-A.png" alt="Sign A" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">B</div>
+      <div class="box-image"><img src="https://i.ibb.co/N6WTRkWj/Hand-B.png" alt="Sign B" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">C</div>
+      <div class="box-image"><img src="https://i.ibb.co/rP3TScP/Hand-C.png" alt="Sign C" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">D</div>
+      <div class="box-image"><img src="https://i.ibb.co/JWZC4bkL/Hand-D.png" alt="Sign D" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">E</div>
+      <div class="box-image"><img src="https://i.ibb.co/nqqzhrn5/Hand-E.png" alt="Sign E" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">F</div>
+      <div class="box-image"><img src="https://i.ibb.co/fz5CpSw8/Hand-F.png" alt="Sign F" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">G</div>
+      <div class="box-image"><img src="https://i.ibb.co/qMSx6yFt/Hand-G.png" alt="Sign G" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">H</div>
+      <div class="box-image"><img src="https://i.ibb.co/1YqLQm3h/Hand-H.png" alt="Sign H" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">I</div>
+      <div class="box-image"><img src="https://i.ibb.co/VWkpqk0Q/Hand-I.png" alt="Sign I" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">J</div>
+      <div class="box-image"><img src="https://i.ibb.co/KB4Wcgy/J.gif" alt="Sign J" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">K</div>
+      <div class="box-image"><img src="https://i.ibb.co/1GypD7CF/Hand-K.png" alt="Sign K" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">L</div>
+      <div class="box-image"><img src="https://i.ibb.co/PGnf2Hm4/Hand-L.png" alt="Sign L" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">M</div>
+      <div class="box-image"><img src="https://i.ibb.co/Q3xLGr6Y/Hand-M.png" alt="Sign M" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">N</div>
+      <div class="box-image"><img src="https://i.ibb.co/Rkf57HZg/Hand-N.png" alt="Sign N" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">O</div>
+      <div class="box-image"><img src="https://i.ibb.co/0j9zqkv1/Hand-O.png" alt="Sign O" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">P</div>
+      <div class="box-image"><img src="https://i.ibb.co/jks9nJFm/P.gif" alt="Sign P" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">Q</div>
+      <div class="box-image"><img src="https://i.ibb.co/ZpmQCv8Q/Hand-Q.png" alt="Sign Q" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">R</div>
+      <div class="box-image"><img src="https://i.ibb.co/pvHX5T1C/Hand-R.png" alt="Sign R" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">S</div>
+      <div class="box-image"><img src="https://i.ibb.co/bqvvzzL/S.gif" alt="Sign S" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">T</div>
+      <div class="box-image"><img src="https://i.ibb.co/FbPhkB7y/Hand-T.png" alt="Sign T" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">U</div>
+      <div class="box-image"><img src="https://i.ibb.co/DDDXsBj0/Hand-U.png" alt="Sign U" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">V</div>
+      <div class="box-image"><img src="https://i.ibb.co/kgf5Gmg1/Hand-V.png" alt="Sign V" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">W</div>
+      <div class="box-image"><img src="https://i.ibb.co/prLgJNJv/Hand-W.png" alt="Sign W" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">X</div>
+      <div class="box-image"><img src="https://i.ibb.co/wZM1ByJG/Hand-X.png" alt="Sign X" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">Y</div>
+      <div class="box-image"><img src="https://i.ibb.co/SX3FSL6C/Y.gif" alt="Sign Y" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+    <div class="alphabet-box">
+      <div class="alphabet-letter">Z</div>
+      <div class="box-image"><img src="https://i.ibb.co/Q3FYgcK3/Z.gif" alt="Sign Z" loading="lazy"></div>
+      <button class="magnify-btn">🔍</button>
+    </div>
+
+  </section>
+</main>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 BeyondWords. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Adjust header height
+    (function() {
+      const header = document.querySelector("header");
+      function setHeaderVars(){
+        const h = header.offsetHeight || 72;
+        document.documentElement.style.setProperty('--header-height', h + 'px');
+      }
+      setHeaderVars();
+      window.addEventListener('resize', setHeaderVars);
+    })();
+
+   // Magnifier logic
+document.querySelectorAll('.magnify-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    const box = e.target.closest('.alphabet-box');
+    box.classList.toggle('magnified');
+
+    const img = box.querySelector('img');
+    if (img && box.classList.contains('magnified')) {
+      // use currentSrc instead of src
+      box.style.setProperty('--bg-img', `url(${img.currentSrc})`);
+    } else {
+      box.style.setProperty('--bg-img', 'none');
+    }
+  });
+});
+
+document.querySelectorAll('.alphabet-box').forEach(box => {
+  box.addEventListener('mousemove', e => {
+    if (box.classList.contains('magnified')) {
+      const rect = box.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      box.style.setProperty('--x', `${x}px`);
+      box.style.setProperty('--y', `${y}px`);
+
+      const img = box.querySelector('img');
+      if (img) {
+        const bgX = (x / rect.width) * 100;
+        const bgY = (y / rect.height) * 100;
+        box.style.setProperty('--bg-pos', `${bgX}% ${bgY}%`);
+      }
+    }
+  });
+});
+
+    // Apply zoomed background dynamically
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .alphabet-box.magnified::after {
+        background-image: var(--bg-img);
+        background-position: var(--bg-pos, 50% 50%);
+      }
+    `;
+    document.head.appendChild(style);
+    
+    window.addEventListener("scroll", function() {
+      const header = document.querySelector("header");
+      if (window.scrollY > 20) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
+    <!-- Dialogflow Messenger -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="SASbot"
+  agent-id="9a2fc8cb-3d01-49b5-ad52-ad5cb66c8023"
+  language-code="en"
+  chat-icon="images/logo.png">
+</df-messenger>
+
+</body>
+</html>
