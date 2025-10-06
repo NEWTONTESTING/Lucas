@@ -1,0 +1,192 @@
+
+/* Google Fonts already linked in HTML */
+body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: justify; /* Justify text for the entire page */
+}
+
+h1, h2, h5, h3 {
+    font-family: 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 900;
+}
+
+.navbar {
+    margin-bottom: 0;
+    text-transform: uppercase; /* Uppercase all text in the navbar */
+}
+
+.hero-section {
+    background: url('1New Project.png') no-repeat center center;
+    background-size: cover;
+    color: #000000;
+    padding: 30px 0;
+    height: 50vh;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 800px;
+    position: absolute;
+    top: 12%; /* Logo placed above the text */
+    left: 49%;
+    transform: translateX(-50%);
+}
+
+.hero-section .lead {
+    text-align: center;
+    font-family: 'Avenir LT Heavy', sans-serif;
+    margin-top: 10%; /* Move text slightly lower */
+    position: absolute;
+    top: 72%; /* Positioned below the logo, inside the frame */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000000;
+}
+
+    .hero-section .btn-primary {
+        height: 50px;
+        line-height: 55px; /* Vertically centers the text */
+        text-align: center; /* Horizontally centers the text */
+        padding: 10px 30px;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 60px;
+        position: absolute;
+        top: 132%; /* Button positioned right below the text */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 400px; /* Adjust as needed */
+        height: 75px; /* Adjust as needed */
+    }
+
+/* Parallax effect */
+.hero-section {
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.hero-section .background-image {
+    opacity: 0.5; /* Reduced opacity of background */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #343a40;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.card .btn {
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+    text-transform: uppercase; /* Uppercase all text in the footer */
+}
+
+.sign-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Adjust the "Thank you" card */
+.card-container .col-md-6 {
+    display: flex;
+    justify-content: center;
+}
+
+.card-container .col-md-6 .card {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Button adjustments */
+.hero-section .btn-primary {
+    padding: 10px 30px;
+    font-size: 1rem;
+    border-radius: 30px;
+}
+
+/* Center align text and buttons inside white boxes under common phrases and test your knowledge */
+.card-body {
+    text-align: center;
+}
+
+/* Push Common Phrases section further down */
+#phrases {
+    margin-top: 200px; /* adjust the value as needed */
+}
+
+/* New embedded font */
+@font-face {
+  font-family: 'Avenir LT Std 95 Black';
+  src: url('fonts/Avenir LT Std 95 Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Prevent caret on static UI text */
+.card-title,
+.section-title,
+.nav-link,
+.navbar-brand,
+footer,
+h1, h2, h3, h5, p, span {
+  caret-color: transparent;
+}
+/* Force uniform size for all sign images (PNG + GIF) */
+.sign-image {
+    width: 200px;       /* force exact size */
+    height: 200px;
+    object-fit: contain; /* preserve aspect ratio inside the box */
+    display: block;
+    margin: 0 auto;
+}
+/* Quiz images: fixed height, adjustable width */
+#alphabetQuiz .sign-image {
+    height: 425px;   /* keep height the same */
+    width: auto;    /* change this value to make images wider/narrower */
+    object-fit: contain; /* keeps content proportional inside the box */
+}
